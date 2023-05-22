@@ -1,0 +1,42 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel", "attrs"]
+
+[project]
+# Project Name
+name = "sample-module"
+authors = [
+    {name = "Firstname Lastname", email = "email@exaple.com"},
+]
+description = "Sample Description"
+requires-python = ">=3.8"
+# Set Keyword Search
+#keywords = ['some', 'keyword', 'here']
+# Set Licenses
+license = {file = "LICENSE", content-type = "text"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+# list out requirements sample below
+dependencies = [
+#    "PyYAML>=6.0",
+#    'importlib-metadata; python_version<"3.8"',
+]
+# Sets imports to dynamic
+dynamic = ["version", "readme", "entry-points"]
+
+# Set if a script entry point is required; used for CLI
+#[project.scripts]
+#sample-cli = "sample_module.__main__:cli"
+
+# URL to  project
+[project.urls]
+repository = "https://example.com/user/sample-module"
+
+# Set Dynamic imports
+[tool.setuptools.dynamic]
+readme = {file = [ "README.md" ], content-type = "text/markdown"}
+version = {attr = "sample_module.__version__"}
+
+[tools.setuptools.packages]
+find = {}
